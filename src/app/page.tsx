@@ -1,4 +1,4 @@
-import Slides from "@/components/Slides";
+import { Slides } from "@/components/Slides";
 
 const slides = [
   {
@@ -142,5 +142,5 @@ const slides = [
 ];
 
 export default function Home() {
-  return <Slides slides={slides} />;
+  return <Slides />;
 }

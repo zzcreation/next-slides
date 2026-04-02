@@ -7,10 +7,9 @@ import {
   AdjustmentsHorizontalIcon,
   SparklesIcon,
   EyeIcon,
-  HandIcon,
-  BrainIcon,
-  BookOpenIcon,
+  HandRaisedIcon,
 } from "@heroicons/react/24/outline";
+import { BookOpenIcon, Cog8ToothIcon } from "@heroicons/react/24/solid";
 
 type SlideProps = {
   title: string;
@@ -73,7 +72,7 @@ export const Slides = () => (
 
     {/* 4. 双手 — 执行 */}
     <SwiperSlide>
-      <Slide title="双手 — 执行" icon={<HandIcon className="h-8 w-8" />}>
+      <Slide title="双手 — 执行" icon={<HandRaisedIcon className="h-8 w-8" />}>
         <p>
           FileWrite·FileEdit·Bash·NotebookEdit：写文件、编辑、运行命令、Git 操作。
         </p>
@@ -82,7 +81,7 @@ export const Slides = () => (
 
     {/* 5. 大脑 — 思考 */}
     <SwiperSlide>
-      <Slide title="大脑 — 思考" icon={<BrainIcon className="h-8 w-8" />}>
+      <Slide title="大脑 — 思考" icon={<Cog8ToothIcon className="h-8 w-8" />}>
         <ul>
           <li>
             Agent·EnterPlanMode·TaskCreate·Skill：上下文理解、任务拆解、Agent 协作。

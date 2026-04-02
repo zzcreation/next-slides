@@ -3633,13 +3633,13 @@
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
-      "bytes": 5251,
+    ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
+      "bytes": 5502,
       "imports": [],
       "format": "cjs"
     },
-    ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
-      "bytes": 5502,
+    ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
+      "bytes": 5251,
       "imports": [],
       "format": "cjs"
     },
@@ -3672,14 +3672,14 @@
           "original": "/home/zzc/.openclaw/workspace/projects/next-slides/.open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js"
         },
         {
-          "path": ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js",
-          "kind": "require-call",
-          "original": "/home/zzc/.openclaw/workspace/projects/next-slides/.open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js"
-        },
-        {
           "path": ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js",
           "kind": "require-call",
           "original": "/home/zzc/.openclaw/workspace/projects/next-slides/.open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js"
+        },
+        {
+          "path": ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js",
+          "kind": "require-call",
+          "original": "/home/zzc/.openclaw/workspace/projects/next-slides/.open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js"
         }
       ],
       "format": "cjs"
@@ -4490,7 +4490,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__0njo.5w._.js": {
-      "bytes": 5848,
+      "bytes": 1419,
       "imports": [
         {
           "path": ".open-next/server-functions/default/node_modules/next/dist/shared/lib/no-fallback-error.external.js",
@@ -4517,7 +4517,7 @@
       "format": "cjs"
     },
     ".open-next/server-functions/default/.next/server/chunks/ssr/src_components_Slides_tsx_0s2b1r5._.js": {
-      "bytes": 1677,
+      "bytes": 101641,
       "imports": [],
       "format": "cjs"
     },
@@ -7406,11 +7406,11 @@
         ".open-next/server-functions/default/.next/server/app/page_client-reference-manifest.js": {
           "bytesInOutput": 6001
         },
-        ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
-          "bytesInOutput": 5015
-        },
         ".open-next/server-functions/default/.next/server/app/_not-found/page_client-reference-manifest.js": {
           "bytesInOutput": 5249
+        },
+        ".open-next/server-functions/default/.next/server/app/_global-error/page_client-reference-manifest.js": {
+          "bytesInOutput": 5015
         },
         ".open-next/server-functions/default/node_modules/next/dist/server/load-manifest.external.js": {
           "bytesInOutput": 13974
@@ -7545,7 +7545,7 @@
           "bytesInOutput": 271
         },
         ".open-next/server-functions/default/.next/server/chunks/ssr/[root-of-the-server]__0njo.5w._.js": {
-          "bytesInOutput": 6925
+          "bytesInOutput": 1509
         },
         ".open-next/server-functions/default/.next/server/chunks/ssr/_next-internal_server_app_page_actions_09-gtaw.js": {
           "bytesInOutput": 249
@@ -7554,7 +7554,7 @@
           "bytesInOutput": 22706
         },
         ".open-next/server-functions/default/.next/server/chunks/ssr/src_components_Slides_tsx_0s2b1r5._.js": {
-          "bytesInOutput": 1840
+          "bytesInOutput": 109188
         },
         ".open-next/server-functions/default/.next/server/chunks/[turbopack]_runtime.js": {
           "bytesInOutput": 20646
@@ -7728,7 +7728,7 @@
           "bytesInOutput": 57324
         }
       },
-      "bytes": 2864713
+      "bytes": 2966645
     }
   }
 }
