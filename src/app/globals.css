@@ -1,7 +1,12 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
 
 :root {
-  /* 参考网站的颜色变量 */
   --color-background: #ffffff;
   --color-foreground: #1f2937;
   --color-heading: #111827;
@@ -13,92 +18,136 @@
   --color-muted: #6b7280;
 }
 
-@theme inline {
-  --color-background: var(--color-background);
-  --color-foreground: var(--color-foreground);
-  --color-heading: var(--color-heading);
-  --color-accent: var(--color-accent);
-  --color-accent-gold: var(--color-accent-gold);
-  --color-accent-purple: var(--color-accent-purple);
-  --color-code-bg: var(--color-code-bg);
-  --color-border: var(--color-border);
-  --color-muted: var(--color-muted);
-  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: var(--font-jetbrains-mono), 'JetBrains Mono', 'Fira Code', monospace;
-}
-
 body {
-  background: var(--color-background);
+  background-color: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-inter), sans-serif;
 }
 
-/* 标题样式 */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  color: var(--color-heading);
-  letter-spacing: -0.03em;
+.swiper {
+  width: 100vw;
+  height: 100vh;
 }
 
-/* 代码样式 */
-pre, code {
-  font-family: var(--font-mono);
+.swiper-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-/* 卡片样式 */
-.card {
-  background: #ffffff;
-  border: 1px solid var(--color-border);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  transition: all 0.2s ease;
+.presentation-card {
+  @apply w-full max-w-4xl mx-auto p-8 md:p-16 bg-white rounded-3xl border border-gray-100 flex flex-col justify-center transition-all duration-500 ease-out relative overflow-hidden;
+  min-height: 50vh;
+  box-shadow: 0 20px 40px -15px rgba(0,0,0,0.05);
 }
 
-.card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateY(-2px);
+.presentation-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-purple));
+  opacity: 0.8;
 }
 
-/* 绿色卡片 */
-.card-green {
-  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-  border: none;
-  color: white;
+/* Card Themes */
+.card-theme-green::after { background: var(--color-accent); }
+.card-theme-gold::after { background: var(--color-accent-gold); }
+.card-theme-purple::after { background: var(--color-accent-purple); }
+
+.card-theme-dark {
+  @apply bg-gray-900 border-gray-800 text-white shadow-2xl;
+}
+.card-theme-dark::after {
+  background: linear-gradient(90deg, #3f3f46, #18181b);
+}
+.card-theme-dark h1, 
+.card-theme-dark h2, 
+.card-theme-dark h3 {
+  @apply text-white;
+}
+.card-theme-dark p {
+  @apply text-gray-400;
 }
 
-/* 金色卡片 */
-.card-gold {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  border: none;
-  color: white;
+h1.slide-title { @apply text-5xl md:text-7xl font-extrabold mb-6 tracking-tight text-gray-900 leading-tight; }
+h2.slide-subtitle { @apply text-3xl font-bold mb-8 tracking-tight text-gray-800; }
+h3.slide-heading { @apply text-2xl font-bold mb-4 text-gray-800; }
+p.slide-text { @apply text-xl md:text-2xl text-gray-600 leading-relaxed mb-6 font-light; }
+
+.mono-tag {
+  @apply inline-block font-mono text-sm tracking-widest font-semibold uppercase px-4 py-1.5 bg-gray-100 text-gray-600 rounded-sm mb-8;
 }
 
-/* 紫色卡片 */
-.card-purple {
-  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-  border: none;
-  color: white;
+.mono-small {
+  @apply font-mono text-sm tracking-wide text-gray-500 mt-4 block;
 }
 
-/* 标签样式 */
-.label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-muted);
+/* Feature Grid */
+.feature-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 w-full mt-12;
 }
 
-/* 链接样式 */
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
+.feature-item {
+  @apply p-6 rounded-2xl border border-gray-100 text-left relative overflow-hidden transition-all hover:shadow-md hover:-translate-y-1;
+  background: #fafafa;
 }
 
-a:hover {
-  color: #059669;
-  text-decoration: underline;
+.feature-number {
+  @apply font-mono font-bold text-gray-300 text-xl absolute top-6 right-6;
+}
+
+.feature-item.style-green { border-left: 4px solid var(--color-accent); }
+.feature-item.style-gold { border-left: 4px solid var(--color-accent-gold); }
+.feature-item.style-purple { border-left: 4px solid var(--color-accent-purple); }
+
+.feature-item h4 { @apply text-xl font-bold text-gray-900 mb-3; }
+.feature-item p { @apply text-base text-gray-600 line-clamp-3; }
+.feature-item .feature-meta { @apply font-mono text-xs text-gray-400 mt-4 block; }
+
+/* Stats Grid */
+.stats-grid {
+  @apply flex flex-wrap items-center justify-center gap-8 mt-16 pt-8 border-t border-gray-100;
+}
+
+.stat-item {
+  @apply flex items-center gap-4;
+}
+
+.stat-value {
+  @apply font-mono text-3xl md:text-4xl font-bold text-gray-900;
+}
+
+.stat-label {
+  @apply font-mono text-xs uppercase tracking-wider text-gray-500 block mt-1;
+}
+
+.stat-divider {
+  @apply hidden md:block h-10 w-px bg-gray-200;
+}
+
+/* Custom Swiper Controls */
+.swiper-button-next,
+.swiper-button-prev {
+  @apply text-gray-400 hover:text-gray-900 transition-colors drop-shadow-sm;
+  background: white;
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 50%;
+  border: 1px solid #eee;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+.swiper-pagination-bullet {
+  @apply w-2 h-2 bg-gray-300 opacity-100 transition-all duration-300;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-gray-800 w-6 rounded-full;
 }
